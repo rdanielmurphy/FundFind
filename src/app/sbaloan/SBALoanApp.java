@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class SBALoanApp extends Activity implements View.OnClickListener {
 	private Button executeBtn;
@@ -54,11 +53,6 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 
 		contractorSpinner = (Spinner) findViewById(R.id.contractorSpinner);
 		populateSpinner(contractorSpinner, SBALoanConstants.VALUES);
-
-		try {
-		} catch (Exception e) {
-			Toast.makeText(getApplicationContext(), "Could not get data", Toast.LENGTH_LONG).show();
-		}
 	}
 
 	private void populateSpinner(Spinner s, List<String> strings) {
