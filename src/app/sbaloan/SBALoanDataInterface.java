@@ -33,7 +33,7 @@ public class SBALoanDataInterface {
 			for (int i = 0; i < jsonArray.length(); i++) {
 				LoanGrantDto dto = new LoanGrantDto((JSONObject) jsonArray.get(i));
 
-				if (!_loansGrants.containsKey(dto.getStateName()))
+				if (dto.getGovType().equals("Federal"))
 					_loansGrants.put(dto.getStateName(), new HashMap<String, LoanGrantDto>());
 
 				_loansGrants.get("Federal").put(dto.getTitle(), dto);
@@ -48,11 +48,12 @@ public class SBALoanDataInterface {
 				for (int i = 0; i < jsonArray.length(); i++) {
 					LoanGrantDto dto = new LoanGrantDto((JSONObject) jsonArray.get(i));
 
-					// dto should exist already but if not then ok not my fault...bad api.
-					if (_loansGrants.get("Federal").get(dto.getTitle()) == null)
-						_loansGrants.get("Federal").put(dto.getTitle(), dto);
-					else
-						_loansGrants.get("Federal").get(dto.getTitle()).setIndustry(dto.getIndustry());
+					if (dto.getGovType().equals("Federal")) {
+						if (_loansGrants.get("Federal").get(dto.getTitle()) == null)
+							_loansGrants.get("Federal").put(dto.getTitle(), dto);
+						else
+							_loansGrants.get("Federal").get(dto.getTitle()).setIndustry(dto.getIndustry());
+					}
 				}
 			}
 		}
