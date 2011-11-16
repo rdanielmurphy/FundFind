@@ -127,12 +127,25 @@ public class SBALoanDataInterface {
 				meetscriteria = false;
 			if (searchDto.getIsGeneralPurpose() != null && searchDto.getIsGeneralPurpose() != entry.getValue().getIsGeneralPurpose())
 				meetscriteria = false;
-
-			/*
-			 * dto.getIsDisabled() dto.getIsDisaster() dto.getIsExporting() dto.getIsGreen() dto.getIsMilitary() dto.getIsMinority() dto.getIsRural()
-			 * dto.getIsWoman() dto.getLoanType()
-			 */
-
+			if (searchDto.getIsDisabled() != null && searchDto.getIsDisabled() != entry.getValue().getIsDisabled())
+				meetscriteria = false;
+			if (searchDto.getIsDisaster() != null && searchDto.getIsDisaster() != entry.getValue().getIsDisaster())
+				meetscriteria = false;
+			if (searchDto.getIsExporting() != null && searchDto.getIsExporting() != entry.getValue().getIsExporting())
+				meetscriteria = false;
+			if (searchDto.getIsGreen() != null && searchDto.getIsGreen() != entry.getValue().getIsGreen())
+				meetscriteria = false;
+			if (searchDto.getIsMilitary() != null && searchDto.getIsMilitary() != entry.getValue().getIsMilitary())
+				meetscriteria = false;
+			if (searchDto.getIsMinority() != null && searchDto.getIsMinority() != entry.getValue().getIsMinority())
+				meetscriteria = false;
+			if (searchDto.getIsRural() != null && searchDto.getIsRural() != entry.getValue().getIsRural())
+				meetscriteria = false;
+			if (searchDto.getIsWoman() != null && searchDto.getIsWoman() != entry.getValue().getIsWoman())
+				meetscriteria = false;
+			if (searchDto.getLoanType() != null && searchDto.getLoanType() != entry.getValue().getLoanType())
+				meetscriteria = false;
+			
 			if (meetscriteria)
 				returnMap.put(entry.getKey(), entry.getValue());
 		}

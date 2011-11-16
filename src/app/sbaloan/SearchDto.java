@@ -2,9 +2,8 @@ package app.sbaloan;
 
 public class SearchDto {
 	private String state_name, gov_type, loan_type, agency, industry;
-	private Boolean is_general_purpose, is_development, is_exporting,
-			is_contractor, is_green, is_military, is_minority, is_woman,
-			is_disabled, is_rural, is_disaster;
+	private Boolean is_general_purpose, is_development, is_exporting, is_contractor, is_green, is_military, is_minority, is_woman, is_disabled, is_rural,
+			is_disaster;
 
 	public SearchDto() {
 	}
@@ -125,15 +124,15 @@ public class SearchDto {
 		return is_woman;
 	}
 
-	public boolean getIsDisabled() {
+	public Boolean getIsDisabled() {
 		return is_disabled;
 	}
 
-	public boolean getIsRural() {
+	public Boolean getIsRural() {
 		return is_rural;
 	}
 
-	public boolean getIsDisaster() {
+	public Boolean getIsDisaster() {
 		return is_disaster;
 	}
 }
