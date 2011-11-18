@@ -42,6 +42,20 @@ public class SBALoanList extends ListActivity {
 			searchDto.setIsExporting((Boolean) extras.get("exporting"));
 		if (extras.containsKey("contractor"))
 			searchDto.setIsContractor((Boolean) extras.get("contractor"));
+		if (extras.containsKey("women"))
+			searchDto.setIsWoman((Boolean) extras.get("women"));
+		if (extras.containsKey("rural"))
+			searchDto.setIsRural((Boolean) extras.get("rural"));
+		if (extras.containsKey("military"))
+			searchDto.setIsMilitary((Boolean) extras.get("military"));
+		if (extras.containsKey("green"))
+			searchDto.setIsGreen((Boolean) extras.get("green"));
+		if (extras.containsKey("disabled"))
+			searchDto.setIsDisabled((Boolean) extras.get("disabled"));
+		if (extras.containsKey("disaster"))
+			searchDto.setIsDisaster((Boolean) extras.get("disaster"));
+		if (extras.containsKey("minority"))
+			searchDto.setIsMinority((Boolean) extras.get("minority"));
 
 		ListAdapter adapter = null;
 		try {

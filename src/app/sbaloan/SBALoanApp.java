@@ -20,6 +20,13 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 	private Spinner developmentSpinner;
 	private Spinner exportingSpinner;
 	private Spinner contractorSpinner;
+	private Spinner womenSpinner;
+	private Spinner ruralSpinner;
+	private Spinner militarySpinner;
+	private Spinner greenSpinner;
+	private Spinner disabledSpinner;
+	private Spinner disasterSpinner;
+	private Spinner minoritySpinner;
 
 	/** Called when the activity is first created. */
 	@Override
@@ -53,6 +60,27 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 
 		contractorSpinner = (Spinner) findViewById(R.id.contractorSpinner);
 		populateSpinner(contractorSpinner, SBALoanConstants.VALUES);
+
+		womenSpinner = (Spinner) findViewById(R.id.womenSpinner);
+		populateSpinner(womenSpinner, SBALoanConstants.VALUES);
+
+		ruralSpinner = (Spinner) findViewById(R.id.ruralSpinner);
+		populateSpinner(ruralSpinner, SBALoanConstants.VALUES);
+
+		militarySpinner = (Spinner) findViewById(R.id.militarySpinner);
+		populateSpinner(militarySpinner, SBALoanConstants.VALUES);
+
+		greenSpinner = (Spinner) findViewById(R.id.greenSpinner);
+		populateSpinner(greenSpinner, SBALoanConstants.VALUES);
+
+		disabledSpinner = (Spinner) findViewById(R.id.disabledSpinner);
+		populateSpinner(disabledSpinner, SBALoanConstants.VALUES);
+
+		disasterSpinner = (Spinner) findViewById(R.id.disasterSpinner);
+		populateSpinner(disasterSpinner, SBALoanConstants.VALUES);
+
+		minoritySpinner = (Spinner) findViewById(R.id.minoritySpinner);
+		populateSpinner(minoritySpinner, SBALoanConstants.VALUES);
 	}
 
 	private void populateSpinner(Spinner s, List<String> strings) {
@@ -104,6 +132,20 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 				intent.putExtra("exporting", getStateOfBox(exportingSpinner.getSelectedItem().toString()));
 			if (getStateOfBox(contractorSpinner.getSelectedItem().toString()) != null)
 				intent.putExtra("contractor", getStateOfBox(contractorSpinner.getSelectedItem().toString()));
+			if (getStateOfBox(womenSpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("women", getStateOfBox(womenSpinner.getSelectedItem().toString()));
+			if (getStateOfBox(ruralSpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("rural", getStateOfBox(ruralSpinner.getSelectedItem().toString()));
+			if (getStateOfBox(militarySpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("military", getStateOfBox(militarySpinner.getSelectedItem().toString()));
+			if (getStateOfBox(greenSpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("green", getStateOfBox(greenSpinner.getSelectedItem().toString()));
+			if (getStateOfBox(disabledSpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("disabled", getStateOfBox(disabledSpinner.getSelectedItem().toString()));
+			if (getStateOfBox(disasterSpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("disaster", getStateOfBox(disasterSpinner.getSelectedItem().toString()));
+			if (getStateOfBox(minoritySpinner.getSelectedItem().toString()) != null)
+				intent.putExtra("minority", getStateOfBox(minoritySpinner.getSelectedItem().toString()));
 
 			startActivity(intent);
 		}
