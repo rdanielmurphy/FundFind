@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 public class SBALoanApp extends Activity implements View.OnClickListener {
-	private Button executeBtn;
+	private Button executeBtn, searchBtn;
 	private Spinner stateSpinner;
 	private Spinner typeSpinner;
 	private Spinner industrySpinner;
@@ -36,6 +36,8 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 
 		executeBtn = (Button) findViewById(R.id.executeBtn);
 		executeBtn.setOnClickListener(this);
+		searchBtn = (Button) findViewById(R.id.savedBtn);
+		searchBtn.setOnClickListener(this);
 
 		stateSpinner = (Spinner) findViewById(R.id.stateSpinner);
 		List<String> stateOptions = new ArrayList<String>();
@@ -147,6 +149,9 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 			if (getStateOfBox(minoritySpinner.getSelectedItem().toString()) != null)
 				intent.putExtra("minority", getStateOfBox(minoritySpinner.getSelectedItem().toString()));
 
+			startActivity(intent);
+		} else if (view.equals(searchBtn)) {
+			Intent intent = new Intent(this, SBALoanSavedList.class);
 			startActivity(intent);
 		}
 	}

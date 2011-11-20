@@ -3,27 +3,29 @@ package app.sbaloan;
 import org.json.JSONObject;
 
 public class LoanGrantDto {
-	String state_name;
-	String gov_type;
-	String loan_type;
-	String agency;
-	String industry;
-	String title;
-	String description;
-	String url;
-	boolean is_general_purpose;
-	boolean is_development;
-	boolean is_exporting;
-	boolean is_contractor;
-	boolean is_green;
-	boolean is_military;
-	boolean is_minority;
-	boolean is_woman;
-	boolean is_disabled;
-	boolean is_rural;
-	boolean is_disaster;
+	private String state_name;
+	private String gov_type;
+	private String loan_type;
+	private String agency;
+	private String industry;
+	private String title;
+	private String description;
+	private String url;
+	private boolean is_general_purpose;
+	private boolean is_development;
+	private boolean is_exporting;
+	private boolean is_contractor;
+	private boolean is_green;
+	private boolean is_military;
+	private boolean is_minority;
+	private boolean is_woman;
+	private boolean is_disabled;
+	private boolean is_rural;
+	private boolean is_disaster;
+	private String json_String;
 
 	public LoanGrantDto(JSONObject o) throws Exception {
+		json_String = o.toString();
 		gov_type = (String) o.get("gov_type");
 		if (!o.isNull("state_name"))
 			state_name = (String) o.get("state_name");
@@ -139,4 +141,7 @@ public class LoanGrantDto {
 		return is_disaster;
 	}
 
+	public String getOrigJSON() {
+		return json_String;
+	}
 }

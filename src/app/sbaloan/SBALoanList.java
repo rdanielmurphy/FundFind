@@ -88,7 +88,7 @@ public class SBALoanList extends ListActivity {
 					Toast.makeText(getApplicationContext(), "Error...could not generate search. See log.", Toast.LENGTH_LONG).show();
 					Log.e("search exception", e.getMessage());
 				} finally {
-					
+
 				}
 			}
 		}).start();
@@ -104,6 +104,7 @@ public class SBALoanList extends ListActivity {
 		intent.putExtra("state", _list.get(position).getStateName());
 		intent.putExtra("specialties", getSpecialtyString(_list.get(position)));
 		intent.putExtra("url", _list.get(position).getUrl());
+		intent.putExtra("json", _list.get(position).getOrigJSON());
 		startActivity(intent);
 	}
 
