@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,7 +28,7 @@ public class SBALoanList extends ListActivity {
 		setContentView(R.layout.loans_grants_list);
 
 		// create searchdto based on information
-		SearchDto searchDto = new SearchDto();
+		final SearchDto searchDto = new SearchDto();
 		Bundle extras = getIntent().getExtras();
 		searchDto.setGovType(extras.getString("gov_type"));
 		searchDto.setStateName(extras.getString("state"));
@@ -57,19 +58,40 @@ public class SBALoanList extends ListActivity {
 		if (extras.containsKey("minority"))
 			searchDto.setIsMinority((Boolean) extras.get("minority"));
 
-		ListAdapter adapter = null;
-		try {
-			_list = new ArrayList<LoanGrantDto>();
-			Map<String, LoanGrantDto> map = SBALoanDataInterface.getInstance().search(searchDto, searchDto.getStateName());
-			for (Map.Entry<String, LoanGrantDto> entry : map.entrySet())
-				_list.add(entry.getValue());
+		final ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar1);
 
-			adapter = new LoanGrantListAdapter(this, _list);
-		} catch (Exception e) {
-			Toast.makeText(getApplicationContext(), "Error...could not generate search. See log.", Toast.LENGTH_LONG).show();
-			Log.e("search exception", e.getMessage());
-		}
-		setListAdapter(adapter);
+		// Start lengthy operation in a background thread
+		new Thread(new Runnable() {
+			public void run() {
+				try {
+					progress.setVisibility(ProgressBar.VISIBLE);
+
+					_list = new ArrayList<LoanGrantDto>();
+					Map<String, LoanGrantDto> map = SBALoanDataInterface.getInstance().search(searchDto, searchDto.getStateName());
+					for (Map.Entry<String, LoanGrantDto> entry : map.entrySet())
+						_list.add(entry.getValue());
+
+					final ListAdapter adapter = new LoanGrantListAdapter(SBALoanList.this, _list);
+
+					runOnUiThread(new Runnable() {
+						public void run() {
+							try {
+								setListAdapter(adapter);
+								progress.setVisibility(ProgressBar.GONE);
+							} catch (Exception e1) {
+								Toast.makeText(getApplicationContext(), "Error...could not generate search. See log.", Toast.LENGTH_LONG).show();
+								Log.e("search exception", e1.getMessage());
+							}
+						}
+					});
+				} catch (Exception e) {
+					Toast.makeText(getApplicationContext(), "Error...could not generate search. See log.", Toast.LENGTH_LONG).show();
+					Log.e("search exception", e.getMessage());
+				} finally {
+					
+				}
+			}
+		}).start();
 	}
 
 	public void onListItemClick(ListView parent, View v, int position, long id) {
