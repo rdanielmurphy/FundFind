@@ -34,9 +34,7 @@ public class SBALoanDataInterface {
 				LoanGrantDto dto = new LoanGrantDto((JSONObject) jsonArray.get(i));
 
 				if (dto.getGovType().equals("Federal"))
-					_loansGrants.put(dto.getStateName(), new HashMap<String, LoanGrantDto>());
-
-				_loansGrants.get("Federal").put(dto.getTitle(), dto);
+					_loansGrants.get("Federal").put(dto.getTitle(), dto);
 			}
 		}
 
@@ -143,9 +141,7 @@ public class SBALoanDataInterface {
 				meetscriteria = false;
 			if (searchDto.getIsWoman() != null && searchDto.getIsWoman() != entry.getValue().getIsWoman())
 				meetscriteria = false;
-			if (searchDto.getLoanType() != null && searchDto.getLoanType() != entry.getValue().getLoanType())
-				meetscriteria = false;
-			
+
 			if (meetscriteria)
 				returnMap.put(entry.getKey(), entry.getValue());
 		}
