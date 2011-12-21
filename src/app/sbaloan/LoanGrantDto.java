@@ -41,20 +41,24 @@ public class LoanGrantDto {
 		title = (String) o.get("title");
 		description = (String) o.get("description");
 		url = (String) o.get("url");
-		is_general_purpose = intToBoolean((Integer) o.get("is_general_purpose"));
-		is_development = intToBoolean((Integer) o.get("is_development"));
-		is_exporting = intToBoolean((Integer) o.get("is_exporting"));
-		is_contractor = intToBoolean((Integer) o.get("is_contractor"));
-		is_green = intToBoolean((Integer) o.get("is_green"));
-		is_military = intToBoolean((Integer) o.get("is_military"));
-		is_minority = intToBoolean((Integer) o.get("is_minority"));
-		is_woman = intToBoolean((Integer) o.get("is_woman"));
-		is_disabled = intToBoolean((Integer) o.get("is_disabled"));
-		is_rural = intToBoolean((Integer) o.get("is_rural"));
-		is_disaster = intToBoolean((Integer) o.get("is_disaster"));
+		is_general_purpose = stringToBoolean((String)o.get("is_general_purpose"));
+		is_development = stringToBoolean((String)o.get("is_development"));
+		is_exporting = stringToBoolean((String)o.get("is_exporting"));
+		is_contractor = stringToBoolean((String)o.get("is_contractor"));
+		is_green = stringToBoolean((String)o.get("is_green"));
+		is_military = stringToBoolean((String)o.get("is_military"));
+		is_minority = stringToBoolean((String)o.get("is_minority"));
+		is_woman = stringToBoolean((String)o.get("is_woman"));
+		is_disabled = stringToBoolean((String)o.get("is_disabled"));
+		is_rural = stringToBoolean((String)o.get("is_rural"));
+		is_disaster = stringToBoolean((String)o.get("is_disaster"));
 	}
 
-	private boolean intToBoolean(Integer i) {
+	private boolean stringToBoolean(String s) {
+		if (s == null || s.trim().length() < 1)
+			return false;
+
+		Integer i = Integer.parseInt(s);
 		if (i == 0)
 			return false;
 
