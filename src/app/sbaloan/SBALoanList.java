@@ -67,7 +67,12 @@ public class SBALoanList extends ListActivity {
 					progress.setVisibility(ProgressBar.VISIBLE);
 
 					_list = new ArrayList<LoanGrantDto>();
-					Map<String, LoanGrantDto> map = SBALoanDataInterface.getInstance().search(searchDto, searchDto.getStateName());
+					Map<String, LoanGrantDto> map = null;
+					try {
+						map = SBALoanDataInterface.getInstance().search(searchDto, searchDto.getStateName());
+					} catch (Exception e) {
+						throw new Exception("Error in retrieving data.");
+					}
 					for (Map.Entry<String, LoanGrantDto> entry : map.entrySet())
 						_list.add(entry.getValue());
 

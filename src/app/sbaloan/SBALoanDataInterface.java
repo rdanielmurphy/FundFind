@@ -100,7 +100,7 @@ public class SBALoanDataInterface {
 		}
 	}
 
-	public static Map<String, LoanGrantDto> search(SearchDto searchDto, String state) throws Exception {
+	public Map<String, LoanGrantDto> search(SearchDto searchDto, String state) throws Exception {
 		Map<String, LoanGrantDto> fed_state_map;
 		Map<String, LoanGrantDto> returnMap = new HashMap<String, LoanGrantDto>();
 

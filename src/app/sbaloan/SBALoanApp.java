@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SBALoanApp extends Activity implements View.OnClickListener {
 	private Button executeBtn, searchBtn;
@@ -119,40 +120,44 @@ public class SBALoanApp extends Activity implements View.OnClickListener {
 	}
 
 	public void onClick(View view) {
-		if (view.equals(executeBtn)) {
-			Intent intent = new Intent(this, SBALoanList.class);
+		try {
+			if (view.equals(executeBtn)) {
+				Intent intent = new Intent(this, SBALoanList.class);
 
-			intent.putExtra("gov_type", stateSpinner.getSelectedItem().toString().equals("Federal") ? "Federal" : "State");
-			intent.putExtra("state", stateSpinner.getSelectedItem().toString());
-			intent.putExtra("type", typeSpinner.getSelectedItem().toString().equals("All") ? null : typeSpinner.getSelectedItem().toString());
-			intent.putExtra("industry", industrySpinner.getSelectedItem().toString().equals("All") ? null : industrySpinner.getSelectedItem().toString());
-			if (getStateOfBox(genPurposeSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("genPurpose", getStateOfBox(genPurposeSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(developmentSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("development", getStateOfBox(developmentSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(exportingSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("exporting", getStateOfBox(exportingSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(contractorSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("contractor", getStateOfBox(contractorSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(womenSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("women", getStateOfBox(womenSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(ruralSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("rural", getStateOfBox(ruralSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(militarySpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("military", getStateOfBox(militarySpinner.getSelectedItem().toString()));
-			if (getStateOfBox(greenSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("green", getStateOfBox(greenSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(disabledSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("disabled", getStateOfBox(disabledSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(disasterSpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("disaster", getStateOfBox(disasterSpinner.getSelectedItem().toString()));
-			if (getStateOfBox(minoritySpinner.getSelectedItem().toString()) != null)
-				intent.putExtra("minority", getStateOfBox(minoritySpinner.getSelectedItem().toString()));
+				intent.putExtra("gov_type", stateSpinner.getSelectedItem().toString().equals("Federal") ? "Federal" : "State");
+				intent.putExtra("state", stateSpinner.getSelectedItem().toString());
+				intent.putExtra("type", typeSpinner.getSelectedItem().toString().equals("All") ? null : typeSpinner.getSelectedItem().toString());
+				intent.putExtra("industry", industrySpinner.getSelectedItem().toString().equals("All") ? null : industrySpinner.getSelectedItem().toString());
+				if (getStateOfBox(genPurposeSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("genPurpose", getStateOfBox(genPurposeSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(developmentSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("development", getStateOfBox(developmentSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(exportingSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("exporting", getStateOfBox(exportingSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(contractorSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("contractor", getStateOfBox(contractorSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(womenSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("women", getStateOfBox(womenSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(ruralSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("rural", getStateOfBox(ruralSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(militarySpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("military", getStateOfBox(militarySpinner.getSelectedItem().toString()));
+				if (getStateOfBox(greenSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("green", getStateOfBox(greenSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(disabledSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("disabled", getStateOfBox(disabledSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(disasterSpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("disaster", getStateOfBox(disasterSpinner.getSelectedItem().toString()));
+				if (getStateOfBox(minoritySpinner.getSelectedItem().toString()) != null)
+					intent.putExtra("minority", getStateOfBox(minoritySpinner.getSelectedItem().toString()));
 
-			startActivity(intent);
-		} else if (view.equals(searchBtn)) {
-			Intent intent = new Intent(this, SBALoanSavedList.class);
-			startActivity(intent);
+				startActivity(intent);
+			} else if (view.equals(searchBtn)) {
+				Intent intent = new Intent(this, SBALoanSavedList.class);
+				startActivity(intent);
+			}
+		} catch (Exception e) {
+			Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG);
 		}
 	}
 
