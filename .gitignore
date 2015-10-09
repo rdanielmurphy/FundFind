@@ -1,0 +1,7 @@
+.DS_Store
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/build
+/gradle/wrapper/gradle-wrapper.jar

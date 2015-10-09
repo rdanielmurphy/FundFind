@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="2" >
+
+    <dataSet config="main" >
+        <source path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res" >
+            <file
+                name="icon"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/drawable-hdpi/icon.png"
+                qualifiers="hdpi-v4"
+                type="drawable" />
+            <file
+                name="icon"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/drawable-ldpi/icon.png"
+                qualifiers="ldpi-v4"
+                type="drawable" />
+            <file
+                name="icon"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/drawable-mdpi/icon.png"
+                qualifiers="mdpi-v4"
+                type="drawable" />
+            <file
+                name="loan_grant_view"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/layout/loan_grant_view.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="loans_grants_item"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/layout/loans_grants_item.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="loans_grants_list"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/layout/loans_grants_list.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                name="main"
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/layout/main.xml"
+                qualifiers=""
+                type="layout" />
+            <file
+                path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/values/strings.xml"
+                qualifiers="" >
+                <string name="hello" >Hello World, SBALoadActivity!
+                </string>
+                <string name="app_name" >SBA Loan/Grant App
+                </string>
+            </file>
+        </source>
+        <source path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/build/generated/res/rs/debug" />
+        <source path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/build/generated/res/generated/debug" />
+    </dataSet>
+    <dataSet config="debug" >
+        <source path="/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/debug/res" />
+    </dataSet>
+
+</merger>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- From: file:/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App1/app/src/main/res/values/strings.xml -->
+    <eat-comment />
+
+    <string name="app_name">SBA Loan/Grant App</string>
+    <string name="hello">Hello World, SBALoadActivity!</string>
+
+</resources>
