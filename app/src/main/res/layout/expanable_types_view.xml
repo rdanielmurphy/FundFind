@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="5dp">
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnGrants"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnLoans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnGrants"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="5dp">
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnVentureCapital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnTaxIncentives"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnVentureCapital"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+</LinearLayout>

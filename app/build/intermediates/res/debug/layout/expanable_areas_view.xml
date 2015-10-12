@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+    <RelativeLayout
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/federalTv"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Federal"/>
+        <Switch
+            android:id="@+id/federalSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorContentBackground"
+            android:checked="true"
+            android:layout_below="@+id/federalTv"
+            android:padding="10dp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <Spinner
+            android:padding="10dp"
+            android:id="@+id/stateSpinner"
+            android:dropDownWidth="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <Switch
+            android:padding="10dp"
+            android:id="@+id/stateSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorContentBackground"
+            android:layout_below="@+id/stateSpinner"/>
+    </RelativeLayout>
+</LinearLayout><!-- From: file:/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App/app/src/main/res/layout/expanable_areas_view.xml -->

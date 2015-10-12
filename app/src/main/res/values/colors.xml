@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#009688</color>
+    <color name="darkPrimary">#ff006c67</color>
+    <color name="colorAccent">#ffc400</color>
+    <color name="colorInclude">#ff64c972</color>
+    <color name="colorIncludePressed">#ffaeffae</color>
+    <color name="colorRemove">#ffff4253</color>
+    <color name="colorRemovePressed">#ffff939f</color>
+    <color name="colorContentBackground">#ffd5d4d3</color>
+</resources>

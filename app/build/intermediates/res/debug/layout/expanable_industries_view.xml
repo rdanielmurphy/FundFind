@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="5dp">
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnAgriculture"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnChildCare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnAgriculture"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnEnviroManagement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnChildCare"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnHealthCare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnEnviroManagement"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="5dp">
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnManufacturing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnTechnology"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnManufacturing"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnTourism"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnTechnology"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+</LinearLayout><!-- From: file:/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App/app/src/main/res/layout/expanable_industries_view.xml -->

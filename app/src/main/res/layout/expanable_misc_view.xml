@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="false">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="5dp">
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnGenPurpose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnDevelopment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnGenPurpose"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnExporting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnDevelopment"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnContractor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnExporting"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnContractor"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:padding="5dp">
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnMilitary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnMinority"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnMilitary"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnWoman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnMinority"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnDisabled"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnWoman"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnRural"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnDisabled"
+            android:layout_gravity="center_horizontal"
+            android:layout_centerInParent="true"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+
+        <app.sbaloan.ui.OnOffMorphingButton
+            android:id="@+id/btnDisaster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnRural"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="6dp"/>
+    </RelativeLayout>
+</LinearLayout>
