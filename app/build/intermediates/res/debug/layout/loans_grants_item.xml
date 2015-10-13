@@ -1,7 +1,0 @@
-
-    <LinearLayout android:id="@+id/linearLayout1" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
-        <TextView android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceLarge" android:text="TextView" android:layout_height="wrap_content" android:id="@+id/txtViewTitle"></TextView>
-        <TextView android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:text="TextView" android:layout_height="wrap_content" android:id="@+id/txtViewAgency"></TextView>
-        <TextView android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall" android:text="TextView" android:layout_height="wrap_content" android:id="@+id/txtViewSmall"></TextView>
-    </LinearLayout>
-<!-- From: file:/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App/app/src/main/res/layout/loans_grants_item.xml -->

@@ -1,8 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <!-- Search, should appear as action button -->
-    <item android:id="@+id/action_search"
-        android:icon="@drawable/ic_search_white_24dp"
-        android:title="Search"
-        app:showAsAction="always" />
-</menu><!-- From: file:/Users/danielmurphy/Projects/Android/SBA-Loan-Grant-App/app/src/main/res/menu/main_activity_action.xml -->
