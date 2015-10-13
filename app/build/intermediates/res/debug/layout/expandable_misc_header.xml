@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textColor="@android:color/white"
-        android:text="Miscellaneous Section"/>
+        android:text="Specialties Section"/>
     <TextView
         android:id="@+id/tvMiscDetails"
         android:layout_width="wrap_content"

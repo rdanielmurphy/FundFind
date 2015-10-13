@@ -3,6 +3,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:paddingRight="5dp"
+    android:paddingLeft="5dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <ScrollView
@@ -59,6 +61,7 @@
                     android:layout_below="@+id/txtViewAgency"></TextView>
 
                 <TableLayout
+                    android:paddingTop="10dp"
                     android:id="@+id/tableLayout1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -72,6 +75,7 @@
 
                         <TextView
                             android:text="Industry: "
+                            android:textStyle="bold"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -92,6 +96,7 @@
 
                         <TextView
                             android:text="Type: "
+                            android:textStyle="bold"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -112,6 +117,7 @@
 
                         <TextView
                             android:text="State: "
+                            android:textStyle="bold"
                             android:layout_height="wrap_content"
                             android:layout_width="wrap_content"
                             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -130,6 +136,7 @@
                 <TextView
                     android:layout_below="@+id/tableLayout1"
                     android:text="URL: "
+                    android:textStyle="bold"
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -145,6 +152,7 @@
                     android:layout_width="wrap_content"></TextView>
 
                 <TextView
+                    android:textStyle="bold"
                     android:text="Specialties: "
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:id="@+id/textView6"

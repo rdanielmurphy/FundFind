@@ -17,8 +17,8 @@ public final class R {
 		public static final int el_headerLayout = 0x7f01004c;
 	}
 	public static final class id {
-		public static final int view_expandable_contentLayout = 0x7f0a00b3;
-		public static final int view_expandable_headerlayout = 0x7f0a00b2;
+		public static final int view_expandable_contentLayout = 0x7f0a00b4;
+		public static final int view_expandable_headerlayout = 0x7f0a00b3;
 	}
 	public static final class layout {
 		public static final int view_expandable = 0x7f03003a;

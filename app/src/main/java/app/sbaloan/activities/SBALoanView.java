@@ -2,6 +2,9 @@ package app.sbaloan.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
@@ -11,7 +14,7 @@ import android.widget.Toast;
 import app.sbaloan.R;
 import app.sbaloan.database.SBALoanDataBaseInterface;
 
-public class SBALoanView extends Activity {
+public class SBALoanView extends AppCompatActivity {
 	private TextView txtViewTitle, txtViewAgency, txtViewUrl, txtViewDescr, txtViewType, txtViewIndustry, txtViewSpecialties, txtViewState;
 	private String jsonString;
 	private CheckBox chkBox;
@@ -21,6 +24,8 @@ public class SBALoanView extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loan_grant_view);
+        getSupportActionBar().show();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 		txtViewTitle = (TextView) findViewById(R.id.txtViewTitle);
 		txtViewAgency = (TextView) findViewById(R.id.txtViewAgency);
@@ -77,4 +82,15 @@ public class SBALoanView extends Activity {
 			Toast.makeText(this.getApplicationContext(), "Could not connect to local database!", Toast.LENGTH_SHORT).show();
 		}
 	}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, SBALoadActivity!</string>
-    <string name="app_name">SBA Loan/Grant App</string>
+    <string name="app_name">FundFind</string>
+    <string name="fund_details_name">Fund Details</string>
+    <string name="fund_search_results_name">Fund Search Results</string>
 </resources>

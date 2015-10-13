@@ -8,10 +8,14 @@ import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -24,18 +28,26 @@ import app.sbaloan.api.SBALoanDataInterface;
 import app.sbaloan.models.LoanGrantDto;
 import app.sbaloan.models.SearchDto;
 
-public class SBALoanList extends ListActivity {
+public class SBALoanList extends AppCompatActivity {
 	private List<LoanGrantDto> _list;
+    private ListView listView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.loans_grants_list);
+        getSupportActionBar().show();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		// create searchdto based on information
 		final SearchDto searchDto = getIntent().getExtras().getParcelable(Main.SEARCH_DTO);
-
 		final ProgressBar progress = (ProgressBar) findViewById(R.id.progressBar1);
+        listView = ((ListView)findViewById(R.id.list));
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                onListItemClick(view, i, l);
+            }
+        });
 
 		// Start lengthy operation in a background thread
 		new Thread(new Runnable() {
@@ -58,7 +70,7 @@ public class SBALoanList extends ListActivity {
 					runOnUiThread(new Runnable() {
 						public void run() {
 							try {
-								setListAdapter(adapter);
+                                listView.setAdapter(adapter);
 								progress.setVisibility(ProgressBar.GONE);
 							} catch (Exception e1) {
 								Toast.makeText(getApplicationContext(), "Error...could not generate search. See log.", Toast.LENGTH_LONG).show();
@@ -83,7 +95,7 @@ public class SBALoanList extends ListActivity {
         finish();
     }
 
-	public void onListItemClick(ListView parent, View v, int position, long id) {
+	public void onListItemClick(View v, int position, long id) {
 		Intent intent = new Intent(this, SBALoanView.class);
 		intent.putExtra("title", _list.get(position).getTitle());
 		intent.putExtra("agency", _list.get(position).getAgency());
@@ -128,6 +140,17 @@ public class SBALoanList extends ListActivity {
 
 		return sb.toString();
 	}
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 	class LoanGrantListAdapter extends ArrayAdapter {
 		private Activity context;
