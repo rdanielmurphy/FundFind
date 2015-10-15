@@ -1,4 +1,4 @@
-# SBA-Loan-Grant-App
+# FundFind (Formally SBA-Loan-Grant-App)
 An Android app that takes loan, grant, venture capital, and tax incentive data from http://api.sba.gov and allows the user to search for funds/tax incentives etc... that they might be interested in.
 
 # Download
